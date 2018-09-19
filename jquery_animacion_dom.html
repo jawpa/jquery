@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<button>Click</button>
+	<div id="info1">INFO1</div>
+	<div id="info1">INFO2</div>
+	<div id="info1">INFO3</div>
+
+	<script>
+		
+		$(function(){
+			// seleccionamos a todo lo que hay en la página y lo desaparecemos en 4 segundos
+			$("button").click(function () {
+				$("*").hide(4000);
+			})	
+		});
+	</script>
+</body>
+</html>

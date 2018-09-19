@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<input type="text" id="texto">
+	<input type="submit" id="enviar" value="enviar">
+	<script>
+		
+		$(function(){
+			$("#enviar").click(function () {
+				// obtenemos el valor del input
+				var x = $("#texto").val();
+				// mostramos el contenido del input en un alert
+				alert(x);
+			});
+		});
+	</script>
+</body>
+</html>		

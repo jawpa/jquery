@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<h1 id="info">Información Importante</h1>
+	<script>
+		// declaramos a jquery, hay varias maneras 
+		// $(document).on("ready",function(){
+			
+		// });
+
+		// $(document).ready(function(){
+
+		// }); 
+
+		// seleccionamos una caja, escondemos el contenido en tres segundos y lo mostramos en un segundo 
+		$(function(){
+			$("#info").hide(3000).show(1000);
+		});
+	</script>
+</body>
+</html>		

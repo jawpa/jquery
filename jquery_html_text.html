@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<p id="texto1">Texto1</p>
+	<p id="texto2">Texto2</p>
+	<button id="boton1">Cambiar Texto</button>
+	<button id="boton2">Cambiar Html</button>
+	
+	<script>
+		
+		$(function(){
+			// le damos un color de fondo a las casillas impares
+			$('#boton1').click(function () {
+				// cambiamos sólo el texto, ignora las etiquetas
+				$('#texto1').text("<b>Texto Nuevo</b>");
+			});
+			$('#boton2').click(function () {
+				// cambiamos el texto y, si tiene, toma en cuenta a las etiquetas
+				$('#texto2').html("<b>Html Nuevo</b>");
+			});
+		});
+	</script>
+</body>
+</html>		

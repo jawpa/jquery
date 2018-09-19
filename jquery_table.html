@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>Pepe</td>
+			<td>43</td>
+		</tr>
+		<tr>
+			<td>Coco</td>
+			<td>32</td>
+		</tr>
+		<tr>
+			<td>Toto</td>
+			<td>72</td>
+		</tr>
+		<tr>
+			<td>Poplo</td>
+			<td>21</td>
+		</tr>
+		<tr>
+			<td>Ona</td>
+			<td>43</td>
+		</tr>
+		<tr>
+			<td>Pepa</td>
+			<td>42</td>
+		</tr>
+	</table>
+	<script>
+		
+		$(function(){
+			// le damos un color de fondo a las casillas impares
+			$("tr:even").css("background-color","red");
+			// le damos un color de fondo a las casillas pares
+			$("tr:odd").css("background-color","green");
+		});
+	</script>
+</body>
+</html>		

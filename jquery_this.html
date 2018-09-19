@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<input type="text" id="texto" value="hola mundo">
+	<input type="button" id="boton" value="click">
+	<input type="text" id="texto2" value="hola mundo">
+	<input type="button" id="boton2" value="click">
+	<script>
+		
+		$(function(){
+			$('#boton').click(function () {
+				// escodemos un texto en tres segundos y lo aparecemos en medio segundo
+				$('#texto').hide(3000).show(500);
+			});
+		});
+		$(function(){
+			$('#boton2').click(function () {
+				// escodemos el botón por tres segundos y lo aparecemos
+				// this representa al elemento con el que trabajamos
+				$(this).hide(3000).show(500);
+			});
+		});
+	</script>
+</body>
+</html>		

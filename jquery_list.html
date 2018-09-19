@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<p>Lista 1</p>
+	<ul>
+		<li>Rojo</li>
+		<li>Azul</li>
+		<li>Verde</li>
+	</ul>
+	<p>Lista 2</p>
+	<ul>
+		<li>Uno</li>
+		<li>Dos</li>
+		<li>Tres</li>
+	</ul>
+
+	<button id="boton1">CLICK</button>
+	<button id="boton2">CLICK</button>
+
+	<script>
+		
+		$(function(){
+			$("#boton1").click(function () {
+				// seleccionamos al primer elemento de la primera lista
+				// y lo escondemos
+				$('ul li:first').hide();
+			})
+				
+		});
+
+		$(function(){
+			$("#boton2").click(function () {
+				// seleccionamos al último elemento de las listas
+				$('ul li:last-child').hide();
+			})
+				
+		});
+		
+	</script>
+</body>
+</html>		
