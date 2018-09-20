@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style>
+		.azul{
+			background-color: blue;
+		}
+
+		.marron{
+			background-color: brown;
+		}
+
+		.clase1{
+			font-size: 22px;
+			color: white;
+			background-color: black;
+		}
+
+		.clase2{
+			font-size: 24px;
+			color: white;
+			background-color: black;
+		}
+
+		.clase3{
+			font-size: 25px;
+			color: white;
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<p>Primer Párrafo</p>
+	<p>Segundo Párrafo</p>
+	<p>Tercer Párrafo</p>
+
+	<button id="uno">Cambiar color de todos</button>
+	<button id="dos">Cambiar el primer color</button>
+	<button id="tres">Cambiar el último color</button>
+	<button id="cuatro">Cambiar fondo de todos los párrafos con addclass</button>
+	<button id="cinco">Cambiar fondo de un párrafo con addclass</button>
+	<button id="seis">Cambiar estilos de todos con addclass</button>
+
+	<script>
+		$(function () {
+			$('#uno').click(function () {
+				// cambiamos el color de los párrados seleccionado a rojo 
+				$('p').css('color','red');
+			})
+
+			// cambiamos sólo el primero
+			$('#dos').click(function () {
+				$('p:first').css('color','green');
+			})
+
+			// cambiamos sólo el último
+			$('#tres').click(function () {
+				$('p:last').css('color','yellow');
+			})
+
+			// cambiamos vía asignación de clases al último párrafo
+			$('#cinco').click(function () {
+				$('p:last').addClass('marron');
+			})
+
+			// cambiamos el fondo a todos los párrafos vía asignación de clases
+			$('#cuatro').click(function () {
+				$('p').addClass('azul');
+			})
+
+			// cambiamos los tamaños de todos los párrafos con una iteración implícita
+			// al inicio de la iteración index vale 0
+			// y la iteración termina cuando terminan los párrafos
+			$('#seis').click(function () {
+				$('p').addClass(function (index) {
+					return "clase" + (index + 1);
+				});
+			})			
+		});
+	</script>
+</body>
+</html>

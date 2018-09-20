@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	Nombre:<input type="text" value="Nombre" id="miId">
+	<div id="info"></div>
+	<br>
+	<button id="boton1">Obtener Atributos</button>
+	<button id="boton2">Modificar Atributos</button>
+	<button id="boton3">Modificar Contenido text</button>
+	<script>
+		
+		$(function(){
+			$('#boton1').click(function () {
+				var x = "";
+				// obtenemos el valor de diferentes atributos 
+				x += "El valor del atributo type es: " + $("input").attr("type") + "<br>";
+				x += "El valor del atributo id es: " + $("input").attr("id") + "<br>";
+				x += "El valor del atributo value es: " + $("input").attr("value");
+				// mostramos el valor almacenado en la caja info
+				$("#info").html(x);
+			})
+
+			$('#boton2').click(function () {
+				// modificamos los valores de los diferentes atributos 
+				$("input").attr("type","password");
+				$("input").attr("id","idNuevo");
+				$("input").attr("value","secreto");
+					
+			})
+
+			$('#boton3').click(function () {
+				// modificamos el valor del atributo value sólo cuándo el input es de tipo text
+				$("input[type='text']").attr("value","Contenido No Secreto");
+				
+			})
+
+
+			
+		});
+	</script>
+</body>
+</html>		

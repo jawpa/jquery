@@ -23,7 +23,18 @@
 	<button>Mostrar Dimensiones</button>
 
 	<script>
-		
+		$(document).ready(function () {
+			$('button').click(function () {
+				// almacenamos las dimensiones de la caja
+				var texto = "";
+				// obtenemos el ancho de la caja
+				texto += $("#caja").width() + "px<br>";
+				// obtenemos el alto
+				texto += $("#caja").height() + "px";
+				// lo imprimimos en la otra caja div
+				$("#detalles").html(texto); 	
+			})
+		});
 	</script>
 </body>
 </html>

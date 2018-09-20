@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+	<style>
+		#p1{
+			background-color: red;
+		}
+		#p2{
+			background-color: blue;
+		}
+		#p3{
+			background-color: yellow;
+		}
+		#p4{
+			background-color: green;
+		}
+
+	</style>
+</head>
+<body>
+	<p id="1">Hola mundo</p>
+	<p id="2">Hola mundo</p>
+	<p id="3">Hola mundo</p>
+	<p id="4">Hola mundo</p>
+	<button>Click</button>
+	
+	<script>
+		$(function() {
+			$('button').click(function () {
+				// le cambiamos la id a cada párrado
+				// le concatenamos a una p un valor
+				// hay una iteración implícita con la función anónima
+				// y el primer valor es 0
+				// termina cuando se terminan los párrafos
+				$('p').attr("id",function (index) {
+					return "p" + (index + 1)
+				});
+			});
+		});
+	</script>
+</body>
+</html>		
