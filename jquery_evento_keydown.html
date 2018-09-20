@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<form action="">
+		<p>Nombre: <input type="text"></p>
+		<p>Email: <input type="email"></p>
+	</form>
+
+	<script>
+		$(function () {
+			// cuando presiona cambia el fondo a rosa
+			$('input').keydown(function () {
+				$(this).css('background-color','pink');
+			});
+
+
+			// cuando levanta el fondo queda en violeta y la letra en blanco
+			$('input[type="text"]').keyup(function () {
+				$(this).css('background-color','violet');
+				$(this).css('color','white');
+			});
+
+			$('input[type="email"]').keyup(function () {
+				$(this).css('background-color','black');
+				$(this).css('color','white');
+			});
+		});
+	</script>
+</body>
+</html>

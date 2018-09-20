@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+	<style>
+		#ide{
+			background-color: green;
+			font-size: 25px;
+			padding: 5px;
+		}
+
+		.clase{
+			background-color: orange;
+			font-size: 25px;
+			padding: 5px;	
+		}
+	</style>
+</head>
+<body>
+	<p id="ide">Hola Mundo 1</p>
+	<p class="clase">Hola Mundo 2</p>
+	<button>Remover Atributos</button>
+	<script>
+		$(function () {
+			// sacamos dos atributos de dos cajas distintas mediante un solo click
+			$('button').click(function () {
+				$('p').removeAttr('id class');
+			})
+		});
+	</script>
+</body>
+</html>

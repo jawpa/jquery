@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+	<style>
+		#p1{
+			background: red;
+			height: 60px;
+			width: 60px;
+			border: 2px solid black;
+			border-radius: 8px;
+			text-align: center;
+		}
+
+		#p2{
+			background: blue;
+			height: 60px;
+			width: 60px;
+			border: 2px solid black;
+			border-radius: 8px;
+			text-align: center;
+		}
+
+		#p3{
+			background: green;
+			height: 60px;
+			width: 60px;
+			border: 2px solid black;
+			border-radius: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<p id="p1">Hola Mundo,haceme doble click</p>
+	<p id="p2">Hola Mundo,haceme doble click</p>
+	<p id="p3">Hola Mundo,haceme doble click</p>
+
+	<script>
+		$(function () {
+			// doble click en la caja para accionar el método hide
+			$("#p1").dblclick(function () {
+				$(this).hide();
+			})
+			$("#p2").dblclick(function () {
+				alert("hola mundo");
+			})
+			$("#p3").dblclick(function () {
+				$(this).hide();
+			})		
+		})
+	</script>
+</body>
+</html>

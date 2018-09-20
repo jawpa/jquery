@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous">
+	</script>
+	<style>
+		.clase{
+			color: blue;
+			font-size: 25px;
+		}
+
+		.clase2{
+			background: green;
+			text-align: center;
+			padding-top: 50px;
+			width: 100px;
+			height: 60px;
+			font-size: 25px;
+		}
+	</style>
+</head>
+<body>
+	<p class="clase">Hola Mundo</p>
+	<button id="boton">Click</button>
+
+	<div id="caja">caja</div>
+	<button id="add">add</button>
+	<button id="remove">remove</button>
+
+	<script>
+		$(function () {
+			// removemos la clase y los estilos
+			$('#boton').click(function () {
+				$('p').removeClass("clase");
+			})
+
+			// le damos la clase y los estilos
+			$('#add').click(function () {
+				$('#caja').addClass('clase2');
+			})
+
+
+			// removemos la clasey los estilos
+			$('#remove').click(function () {
+				$('#caja').removeClass('clase2');
+			})
+		});
+	</script>
+</body>
+</html>
