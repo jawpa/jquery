@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="info"></div>
+	<button>Click</button>
+	<script type="text/javascript">
+		$(function () {
+			$("button").click(function () {
+				// 1 parámetro, la fuente de información
+				// 2 parámetro, una función que recibe: referencia a la  AJAX HTTP GET request con sus status
+				$.get("jquery.txt",function (dato, status, xhr) {
+					// escribimos el contenido del archivo, el status y el status ajax en el div
+					$('#info').html("Mensaje:" + dato + "<br>Status: " + status + " " +  xhr.status);
+					// y por consola
+					console.log("Mensaje:" + dato + "\nSatus: " + status + " " + xhr.status);
+				});
+			});
+		});
+	</script>
+</body>
+</html>

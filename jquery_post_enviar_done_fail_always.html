@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<form>
+	Nombre:<input type="text" id="nombre"><br>
+	Apellido:<input type="text" id="apellido"><br>
+	<input type="submit" value="Enviar">	
+</form>
+
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="mensaje"></div>
+<div id="mensaje2"></div>
+
+<script>
+	$(function () {
+		$('input[type=submit]').click(function (event) {
+			// prevenimos que el formulario se envíe por defecto, no se actualice la pantalla y podamos ver el mensaje en la misma
+			event.preventDefault();
+			// guardamos el texto ingresado en el input-text
+			var nombre = $("#nombre").val();
+			var apellido = $("#apellido").val();
+			// con el método post tenemos varios parámetros:
+			// 1. el servidor al que le pasamos y desde el que recibimos
+			// 2. un objeto literal, con las claves-valores con la info que le pasamos
+			// 3. una función anónima que recibe la respuesta del servidor como argumento
+			$.post("jquery_post_enviar.php",{nombre:nombre, apellido:apellido}, function (respuesta) {
+				$('#div1').html(respuesta);
+				$('#div2').text(respuesta);
+				// mostramos un mensaje extra en la pantalla con el método done
+				// no es enviado por el servidor, se ejecuta si hay éxito
+			}).done(function () {
+				$('#mensaje').text("estamos bien los 33, el servidor respondió con éxitos");
+				// escribe el mensaje cuando falla el servidor
+			}).fail(function () {
+				$('#mensaje').text("estamos mal los 33, el servidor no respondió");
+				// el método always se escribe siempre
+			}).always(function () {
+				$('#mensaje2').text("somos 33 gansos que escribimos siempre");
+			});
+		});		
+	});
+	
+</script>	
+	
+</body>
+</html>

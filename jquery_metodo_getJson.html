@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+	<ul id="info"></ul>
+	<button>Click</button>
+	<script type="text/javascript">
+		$(function () {
+			$("button").click(function () {
+				// 1 parámetro, la fuente dónde obtenemos los 
+				// 2 parámetro es una función que tiene como argumento la referencia a la información obtenida
+				$.getJSON("objeto_json_array.json",function (datos) {
+					// escribimos el contenido del archivo
+					// usamos la función each, le pasamos como parámetros la referencia al archivo json con la clave del objeto json que está incluido y una función que tendrá un índice y el objeto-json de cada índice
+					// primero nos cercioramos que esté vacía la caja de la página
+					if ($('#info').is(":empty")) {
+						$.each(datos.empleados,function (index,obj) {
+							$("ul").append("<li>Nombre:" + obj.nombre + "<br>Apellido:" + obj.apellido + "<br>Dni:" +  obj.dni + "</li>");
+						});	
+					}
+					
+					// y por consola
+					console.log(datos);
+				});
+			});
+		});
+	</script>
+</body>
+</html>

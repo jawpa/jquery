@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="div1"></div>
+<button>click</button>
+
+<script>
+	$(function () {
+		$("button").click(function(){
+			// la pasamos dos parámetros, url y success
+		    $.ajax({url: "jquery.txt", success: function(result){
+		        $("#div1").html(result);
+		    }});
+		});
+	});
+	
+</script>	
+	
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="info"></div>
+	<button>Click</button>
+	<script type="text/javascript">
+		$(function () {
+			$("button").click(function () {
+				// la propiedad url tiene como valor la dirección de dónde queremos obtener la info
+				// type, especifica el tipo de método que utilizamos en la petición
+				// datatype, qué tipo de información vamos a recibir
+				// sucess: es un método que se ejecuta si todo salió bien
+				// recibe como parémtro a la info
+				$.ajax({
+					url: "json_array.json",
+					type: "get",
+					dataType: "json",
+					success: function (datos) {
+						console.log(datos);
+						if ($("#info").is(":empty")) {
+							$.each(datos,function (index,obj) {
+								$('#info').append(obj.nombre + " " + obj.apellido + " " + obj.dni + "<br>" );
+							});
+						} 
+						
+					},
+					// xhr (el objeto xmlhttprequest) contiene toda la información al ejecutarse la petición de ajax
+					// status es el status de la petición
+					// error es el mensaje de error que ocurre
+					error: function (xhr, status, error) {
+						console.log(xhr);
+						console.log(status);
+						console.log(error);
+					}
+
+				});
+					
+			});
+			
+		});
+	</script>
+</body>
+</html>

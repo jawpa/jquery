@@ -1,0 +1,24 @@
+{
+	"empleados":[
+					{
+						"nombre":"Matumbo",
+						"apellido":"Lopez",
+						"dni":2372820
+					},
+					{
+						"nombre":"Koguilo",
+						"apellido":"Martinez",
+						"dni":2829720
+					},
+					{
+						"nombre":"Yombuto",
+						"apellido":"Perez",
+						"dni":2232022
+					},
+					{
+						"nombre":"Lomimpi",
+						"apellido":"Martelli",
+						"dni":2897224
+					}
+				]
+}

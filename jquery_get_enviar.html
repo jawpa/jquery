@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" id="nombre">
+<button>click</button>
+<div id="div1"></div>
+<div id="div2"></div>
+
+<script>
+	$(function () {
+		$('button').click(function () {
+			// guardamos el texto ingresado en el input-text
+			var usuario = $("#nombre").val();
+			// con el método get tenemos varios parámetros:
+			// 1. el servidor al que le pasamos y desde el que recibimos
+			// 2. un objeto literal, con la clave-valor con la info que le pasamos
+			// 3. una función anónima que recibe el valor del servidor como argumento
+			$.get("jquery_get_enviar.php",{nombre:usuario}, function (dato) {
+				$('#div1').html(dato);
+				$('#div2').text(dato);
+			})
+		})		
+	});
+	
+</script>	
+	
+</body>
+</html>
